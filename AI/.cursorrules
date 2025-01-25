@@ -1,0 +1,194 @@
+Vou aprimorar as regras com foco na integração Supabase, otimizações para Vercel e fluxos do GitHub. Aqui estão as atualizações estratégicas:
+
+### 1. **Integração Supabase (Novo)**
+```bash
+/src
+  /lib
+    /supabase
+      client.ts
+      types.ts # Tipos gerados com `supabase gen types typescript`
+```
+
+**Regras de Segurança do Banco:**
+```sql
+-- Exemplo de RLS para tabela wines
+create policy "Wine visibility"
+  on wines for select using (
+    published = true
+    and inventory_count > 0
+  );
+```
+
+**Autenticação:**
+```tsx
+// /components/auth/Provider.tsx
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+
+export default function AuthProvider() {
+  const supabase = createClientComponentClient()
+  
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user) syncUserProfile(session.user)
+    })
+    
+    return () => subscription?.unsubscribe()
+  }, [])
+}
+```
+
+### 2. **Configuração Vercel (Atualização)**
+```bash
+/vercel
+  /storage
+    output
+  config.json
+```
+
+**Variáveis de Ambiente:**
+```bash
+# .env.example
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_SITE_URL=$VERCEL_URL
+```
+
+**Cache Strategies:**
+```ts
+// app/[lang]/products/page.tsx
+export const revalidate = 3600 // ISR para dados de vinhos
+```
+
+### 3. **Fluxo GitHub (Novo)**
+```yaml
+# .github/workflows/checks.yml
+name: Quality Checks
+on: [pull_request]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: supabase/cli@latest
+        with:
+          args: audit --db-url ${{ secrets.SUPABASE_DB_URL }}
+```
+
+**Branch Protection Rules:**
+- Require status checks before merging:
+  - `Lighthouse Audit`
+  - `Type Checking`
+  - `RLS Policy Validation`
+
+### 4. **Otimizações para Imagens de Vinhos**
+```tsx
+// components/WineImage.tsx
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+
+export default function WineImage({ path, alt }) {
+  const supabase = createClientComponentClient()
+  const { data: { publicUrl } } = supabase.storage
+    .from('wine-bottles')
+    .getPublicUrl(path)
+
+  return (
+    <Image 
+      src={publicUrl}
+      alt={alt}
+      fill
+      sizes="(max-width: 768px) 100vw, 33vw"
+    />
+  )
+}
+```
+
+### 5. **Atualizações de Segurança**
+```ts
+// middleware.ts
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico).*)',
+  ],
+}
+
+export function middleware(req: NextRequest) {
+  const supabase = createMiddlewareClient({ req, res })
+  const { data: { session }} = await supabase.auth.getSession()
+  
+  // Protege rotas /admin
+  if (req.nextUrl.pathname.startsWith('/admin') && !session) {
+    return NextResponse.redirect(new URL('/login', req.url))
+  }
+}
+```
+
+### 6. **Testes com Supabase Local**
+```bash
+# Testes devem usar o Supabase Local
+supabase start
+npm run test:e2e
+```
+
+**Mock de Autenticação:**
+```ts
+// tests/mocks/supabase.ts
+jest.mock('@supabase/auth-helpers-nextjs', () => ({
+  createClientComponentClient: () => ({
+    auth: {
+      onAuthStateChange: jest.fn(),
+      signInWithPassword: jest.fn().mockResolvedValue({ data: { user: mockUser } })
+    }
+  })
+}))
+```
+
+### 7. **Sincronização de Dados em Tempo Real**
+```ts
+// stores/wineStore.ts
+const useWineStore = create<WineState>((set) => ({
+  // ...
+  subscribeToUpdates: () => {
+    const supabase = createClientComponentClient()
+    const channel = supabase.channel('wine-updates')
+      .on('postgres_changes', {
+        event: '*',
+        schema: 'public',
+        table: 'wines'
+      }, (payload) => {
+        set({ latestUpdate: payload.new })
+      })
+      .subscribe()
+    
+    return () => supabase.removeChannel(channel)
+  }
+}))
+```
+
+### 8. **Atualização do Checklist de Validação**
+Adicione:
+5. [ ] Teste de políticas RLS no Supabase
+6. [ ] Validação de conexão com Edge Functions
+7. [ ] Load test com dados reais de vinho (>10k registros)
+8. [ ] Backup automático do banco (via GitHub Actions)
+
+### 9. **Tratamento de Erros em Produção**
+```ts
+// app/error.tsx
+'use client'
+
+export default function ErrorBoundary({ error }: { error: Error }) {
+  const supabase = createClientComponentClient()
+  
+  useEffect(() => {
+    supabase.from('errors').insert({
+      message: error.message,
+      stack: error.stack,
+      path: window.location.pathname
+    })
+  }, [error])
+  
+  return <FallbackUI />
+}
+```
+
+Quer que eu desenvolva mais algum desses tópicos ou ajuste alguma parte específica para seu caso de uso?
