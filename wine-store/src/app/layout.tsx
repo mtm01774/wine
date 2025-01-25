@@ -11,6 +11,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Wine Store - Sua experiência premium em vinhos",
   description: "Descubra o prazer de receber os melhores vinhos em casa com nossa curadoria especializada",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -19,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
