@@ -46,10 +46,10 @@ const plans = [
 
 export function Plans() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-[#222222]">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ECE5D5]">
             Escolha o plano perfeito para você
           </h2>
           <p className="text-text-secondary text-lg">
@@ -61,7 +61,7 @@ export function Plans() {
           {plans.map((plan) => (
             <div
               key={plan.title}
-              className={`bg-white rounded-2xl p-8 shadow-lg ${
+              className={`bg-[#333333] rounded-2xl p-8 shadow-lg text-[#ECE5D5] ${
                 plan.highlight
                   ? "ring-2 ring-primary scale-105 md:scale-110"
                   : ""
@@ -78,7 +78,7 @@ export function Plans() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
                     <Check className="text-primary" size={20} />
-                    <span>{feature}</span>
+                    <span className="text-[#ECE5D5]/90">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -95,4 +95,4 @@ export function Plans() {
       </div>
     </section>
   );
-} 
+}

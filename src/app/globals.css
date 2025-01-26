@@ -6,9 +6,9 @@
   --primary: #8B0000;
   --primary-dark: #600000;
   --secondary: #F5E6E8;
-  --text-primary: #2D3748;
-  --text-secondary: #4A5568;
-  --background: #FFFFFF;
+  --text-primary: #ECE5D5;
+  --text-secondary: #E0E0E0;
+  --background: #222222;
 }
 
 @layer base {
@@ -23,11 +23,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-6 rounded-full transition-colors duration-200;
+    @apply bg-primary hover:bg-primary-dark text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2 px-6 rounded-full transition-colors duration-200;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
   }
 
   .container-custom {

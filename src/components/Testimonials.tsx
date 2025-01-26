@@ -30,10 +30,10 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#222222]">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ECE5D5]">
             O que nossos clientes dizem
           </h2>
           <p className="text-text-secondary text-lg">
@@ -45,7 +45,7 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="bg-white rounded-2xl p-8 shadow-lg"
+              className="bg-[#333333] rounded-2xl p-8 shadow-lg"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden">
@@ -57,7 +57,7 @@ export function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                  <h3 className="font-bold text-lg text-[#ECE5D5]">{testimonial.name}</h3>
                   <p className="text-text-secondary">{testimonial.role}</p>
                 </div>
               </div>
@@ -70,11 +70,11 @@ export function Testimonials() {
                   />
                 ))}
               </div>
-              <p className="text-text-secondary">{testimonial.content}</p>
+              <p className="text-[#ECE5D5]/90">{testimonial.content}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-} 
+}
