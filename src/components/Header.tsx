@@ -3,12 +3,12 @@ import { Wine, LogIn } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="fixed w-full bg-[#010F00]/90 backdrop-blur-sm z-50 shadow-sm">
+    <header className="fixed w-full bg-[#010A00]/90 backdrop-blur-sm z-50 shadow-sm">
       <div className="container-custom py-4">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-8 text-primary">
             <Wine size={32} />
-            <span className="font-display text-[1.25rem] font-bold text-[#ECE5D5] leading-none">Wine Store</span>
+            <span className="font-display text-[1.25rem] font-bold text-[#ECE5D5] leading-none">Vinial</span>
           </Link>
 
           <ul className="hidden md:flex items-center gap-6">
@@ -39,7 +39,16 @@ export function Header() {
             </li>
           </ul>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <Link href="/pt" className="text-[#ECE5D5] hover:text-primary transition-colors duration-200 text-[0.75rem]">
+                PT
+              </Link>
+              <span className="text-[#ECE5D5]/25">/</span>
+              <Link href="/en" className="text-[#ECE5D5] hover:text-primary transition-colors duration-200 text-[0.75rem]">
+                EN
+              </Link>
+            </div>
             <Link href="/login" className="text-[#ECE5D5] hover:text-primary transition-colors duration-200 text-[0.75rem] flex items-center gap-2">
               <LogIn size={16} />
               <span>Iniciar Sessão</span>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="min-h-screen bg-[#010F00] pt-[72px]">
+    <section className="min-h-screen bg-[#010A00] pt-[72px]">
       <div className="container-custom h-[calc(100vh-72px)]">
         <div className="grid md:grid-cols-2 gap-8 h-full">
           <div className="relative h-[calc(100vh-72px)]">
@@ -16,9 +16,12 @@ export function Hero() {
                 <p className="text-[1.125rem] md:text-[1.25rem] mb-16 text-[#ECE5D5]/90">
                   Vinhos excepcionais, pouco conhecidos. Receba-os em sua casa.
                 </p>
-                <div>
-                  <Link href="/planos" className="btn-primary text-[1rem] py-4 px-10">
+                <div className="flex flex-col sm:flex-row items-center gap-6">
+                  <Link href="/planos" className="btn-primary text-[1rem] py-4 px-6 w-full sm:w-auto text-center whitespace-nowrap">
                     Conhecer planos
+                  </Link>
+                  <Link href="/como-funciona" className="text-[#ECE5D5] hover:text-primary transition-colors duration-200 text-[1rem] whitespace-nowrap">
+                    Como Funciona
                   </Link>
                 </div>
               </div>

@@ -46,13 +46,13 @@ const plans = [
 
 export function Plans() {
   return (
-    <section className="py-24 bg-[#010F00]">
+    <section className="py-24 bg-[#010A00]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ECE5D5]">
             Escolha o plano perfeito para si
           </h2>
-          <p className="text-text-secondary text-lg">
+          <p className="text-[#ECE5D5]/50 text-lg">
             Subscreva agora e comece a sua jornada no mundo dos vinhos
           </p>
         </div>
@@ -61,34 +61,32 @@ export function Plans() {
           {plans.map((plan) => (
             <div
               key={plan.title}
-              className={`bg-[#333333] rounded-2xl p-8 shadow-lg text-[#ECE5D5] ${
-                plan.highlight
-                  ? "ring-2 ring-primary scale-105 md:scale-110"
-                  : ""
-              }`}
+              className="bg-[#ECE5D5] rounded-2xl p-8 pb-0 shadow-lg text-[#010A00] flex flex-col"
             >
-              <h3 className="font-display text-2xl font-bold mb-4">
-                {plan.title}
-              </h3>
-              <div className="flex items-baseline mb-8">
-                <span className="text-4xl font-bold">{plan.price}</span>
-                <span className="text-text-secondary ml-2">{plan.period}</span>
+              <div className="flex-1">
+                <h3 className="font-display text-2xl font-bold mb-4">
+                  {plan.title}
+                </h3>
+                <div className="flex items-baseline mb-8">
+                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className="text-[#010A00]/70 ml-2">{plan.period}</span>
+                </div>
+                <ul className="space-y-2">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2">
+                      <Check className="text-primary" size={20} />
+                      <span className="text-[#010A00]/90">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2">
-                    <Check className="text-primary" size={20} />
-                    <span className="text-[#ECE5D5]/90">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                className={`w-full ${
-                  plan.highlight ? "btn-primary" : "btn-secondary"
-                }`}
-              >
-                Subscrever agora
-              </button>
+              <div className="pb-8">
+                <button
+                  className="w-full bg-[#010A00] text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200 hover:bg-[#010A00]/90"
+                >
+                  Subscrever
+                </button>
+              </div>
             </div>
           ))}
         </div>
