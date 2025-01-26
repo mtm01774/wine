@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --primary: #8B0000;
-  --primary-dark: #600000;
+  --primary: #993270;
+  --primary-dark: #732554;
   --secondary: #F5E6E8;
   --text-primary: #ECE5D5;
   --text-secondary: #E0E0E0;
@@ -17,21 +17,21 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-playfair;
+    @apply font-display;
   }
 }
 
 @layer components {
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
+    @apply bg-primary hover:bg-primary/90 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
-  }
-
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply bg-transparent border-2 border-primary hover:bg-primary text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
   }
 
   .nav-link {
@@ -40,5 +40,5 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  @apply bg-gradient-to-t from-[#010F00] to-transparent;
 }

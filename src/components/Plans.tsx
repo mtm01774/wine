@@ -2,43 +2,43 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    title: "Mensal",
-    price: "R$ 199",
-    period: "/mês",
-    features: [
-      "2 garrafas premium por mês",
-      "Fichas de degustação",
-      "Newsletter exclusiva",
-      "Acesso ao clube de descontos",
-    ],
-    highlight: false,
-  },
-  {
     title: "Semestral",
-    price: "R$ 179",
+    price: "€ 179",
     period: "/mês",
     features: [
       "2 garrafas premium por mês",
-      "Fichas de degustação",
+      "Fichas de prova",
       "Newsletter exclusiva",
       "Acesso ao clube de descontos",
       "10% de desconto",
       "Presente de boas-vindas",
     ],
+    highlight: false,
+  },
+  {
+    title: "Mensal",
+    price: "€ 199",
+    period: "/mês",
+    features: [
+      "2 garrafas premium por mês",
+      "Fichas de prova",
+      "Newsletter exclusiva",
+      "Acesso ao clube de descontos",
+    ],
     highlight: true,
   },
   {
     title: "Anual",
-    price: "R$ 159",
+    price: "€ 159",
     period: "/mês",
     features: [
       "2 garrafas premium por mês",
-      "Fichas de degustação",
+      "Fichas de prova",
       "Newsletter exclusiva",
       "Acesso ao clube de descontos",
       "20% de desconto",
       "Presente de boas-vindas",
-      "Taça exclusiva do clube",
+      "Copo exclusivo do clube",
     ],
     highlight: false,
   },
@@ -46,14 +46,14 @@ const plans = [
 
 export function Plans() {
   return (
-    <section className="py-24 bg-[#222222]">
+    <section className="py-24 bg-[#010F00]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ECE5D5]">
-            Escolha o plano perfeito para você
+            Escolha o plano perfeito para si
           </h2>
           <p className="text-text-secondary text-lg">
-            Assine agora e comece sua jornada no mundo dos vinhos
+            Subscreva agora e comece a sua jornada no mundo dos vinhos
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function Plans() {
                   : ""
               }`}
             >
-              <h3 className="font-playfair text-2xl font-bold mb-4">
+              <h3 className="font-display text-2xl font-bold mb-4">
                 {plan.title}
               </h3>
               <div className="flex items-baseline mb-8">
@@ -87,7 +87,7 @@ export function Plans() {
                   plan.highlight ? "btn-primary" : "btn-secondary"
                 }`}
               >
-                Assinar agora
+                Subscrever agora
               </button>
             </div>
           ))}

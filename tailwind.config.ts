@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary)",
+        primary: "#993270",
         "primary-dark": "var(--primary-dark)",
         secondary: "var(--secondary)",
         "text-primary": "var(--text-primary)",
-        "text-secondary": "var(--text-secondary)",
+        "text-secondary": "#94A3B8",
         background: "var(--background)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        playfair: ["var(--font-playfair)"],
+        sans: ["var(--font-epilogue)"],
+        display: ["var(--font-redrose)"],
       },
     },
   },

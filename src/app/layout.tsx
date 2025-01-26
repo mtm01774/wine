@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Epilogue, Red_Rose } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
+const epilogue = Epilogue({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-epilogue'
+});
+
+const redRose = Red_Rose({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-redrose'
 });
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body suppressHydrationWarning className={`${epilogue.variable} ${redRose.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

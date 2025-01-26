@@ -7,7 +7,7 @@ const testimonials = [
     role: "Sommelière",
     image: "/images/testimonial-1.jpg",
     content:
-      "Incrível seleção de vinhos! A curadoria é excepcional e cada garrafa é uma nova descoberta. Recomendo muito!",
+      "Incrível seleção de vinhos! A curadoria é excecional e cada garrafa é uma nova descoberta. Recomendo muito!",
     rating: 5,
   },
   {
@@ -15,7 +15,7 @@ const testimonials = [
     role: "Entusiasta",
     image: "/images/testimonial-2.jpg",
     content:
-      "O clube superou minhas expectativas. As fichas de degustação são muito informativas e ajudam a aprender mais sobre vinhos.",
+      "O clube superou as minhas expectativas. As fichas de prova são muito informativas e ajudam a aprender mais sobre vinhos.",
     rating: 5,
   },
   {
@@ -23,21 +23,21 @@ const testimonials = [
     role: "Chef de Cozinha",
     image: "/images/testimonial-3.jpg",
     content:
-      "Ótimo custo-benefício e vinhos de excelente qualidade. O atendimento ao cliente é impecável!",
+      "Ótima relação qualidade-preço e vinhos de excelente qualidade. O apoio ao cliente é impecável!",
     rating: 5,
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-[#222222]">
+    <section className="py-24 bg-[#010F00]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ECE5D5]">
-            O que nossos clientes dizem
+            O que os nossos clientes dizem
           </h2>
           <p className="text-text-secondary text-lg">
-            Experiências reais de membros do nosso clube
+            Experiências reais dos membros do nosso clube
           </p>
         </div>
 
