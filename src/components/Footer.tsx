@@ -3,102 +3,71 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-[#ECE5D5] text-[#010F00] py-16">
+    <footer className="bg-[#1A393E] py-16">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Logo e Sobre */}
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <Wine size={32} className="text-primary" />
-              <span className="font-display text-xl font-bold text-[#010F00]">Wine Store</span>
-            </Link>
-            <p className="text-[#010F00]/70">
-              A sua experiência premium em vinhos, entregue diretamente em sua casa.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div>
+            <h4 className="text-h3 font-bold mb-6">Sobre Nós</h4>
+            <p className="text-base text-[#ECE5D5]/80 mb-6">
+              Somos apaixonados por vinhos e queremos compartilhar essa paixão com você através de seleções exclusivas e experiências únicas.
             </p>
           </div>
 
-          {/* Links Úteis */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-[#010F00]">Ligações Úteis</h3>
-            <ul className="space-y-2">
+            <h4 className="text-h3 font-bold mb-6">Links Rápidos</h4>
+            <ul className="space-y-4">
               <li>
-                <Link href="/sobre" className="text-[#010F00]/70 hover:text-primary transition-colors">
+                <Link href="/planos" className="text-base text-[#ECE5D5]/80 hover:text-primary transition-colors duration-200">
+                  Planos
+                </Link>
+              </li>
+              <li>
+                <Link href="/como-funciona" className="text-base text-[#ECE5D5]/80 hover:text-primary transition-colors duration-200">
+                  Como Funciona
+                </Link>
+              </li>
+              <li>
+                <Link href="/sobre" className="text-base text-[#ECE5D5]/80 hover:text-primary transition-colors duration-200">
                   Sobre Nós
                 </Link>
               </li>
-              <li>
-                <Link href="/planos" className="text-[#010F00]/70 hover:text-primary transition-colors">
-                  Os Nossos Planos
-                </Link>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-h3 font-bold mb-6">Contato</h4>
+            <ul className="space-y-4">
+              <li className="text-base text-[#ECE5D5]/80">
+                contato@wineclub.com
               </li>
-              <li>
-                <Link href="/blog" className="text-[#010F00]/70 hover:text-primary transition-colors">
-                  Blogue
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-[#010F00]/70 hover:text-primary transition-colors">
-                  Perguntas Frequentes
-                </Link>
+              <li className="text-base text-[#ECE5D5]/80">
+                +55 (11) 99999-9999
               </li>
             </ul>
           </div>
 
-          {/* Contato */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-[#010F00]">Contacto</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-[#010F00]/70">
-                <Phone size={20} className="text-primary" />
-                <span>(+351) 999 999 999</span>
-              </li>
-              <li className="flex items-center gap-2 text-[#010F00]/70">
-                <Mail size={20} className="text-primary" />
-                <span>contacto@winestore.pt</span>
-              </li>
-              <li className="flex items-center gap-2 text-[#010F00]/70">
-                <MapPin size={20} className="text-primary" />
-                <span>Lisboa, Portugal</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Redes Sociais */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-[#010F00]">Redes Sociais</h3>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-[#010F00] flex items-center justify-center hover:bg-primary transition-colors text-[#ECE5D5]"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-[#010F00] flex items-center justify-center hover:bg-primary transition-colors text-[#ECE5D5]"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-[#010F00] flex items-center justify-center hover:bg-primary transition-colors text-[#ECE5D5]"
-              >
-                <Twitter size={20} />
-              </a>
-            </div>
+            <h4 className="text-h3 font-bold mb-6">Newsletter</h4>
+            <p className="text-base text-[#ECE5D5]/80 mb-4">
+              Receba novidades e ofertas exclusivas.
+            </p>
+            <form className="flex gap-2">
+              <input
+                type="email"
+                placeholder="Seu e-mail"
+                className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-base px-4 py-2 rounded-lg flex-1"
+              />
+              <button type="submit" className="btn-primary text-button">
+                Enviar
+              </button>
+            </form>
           </div>
         </div>
 
-        <div className="mt-16 text-center text-[#010F00]/70">
-          <p>© 2024 Wine Store. Todos os direitos reservados.</p>
-          <div className="mt-4 space-x-4">
-            <Link href="/privacidade" className="hover:text-primary transition-colors">
-              Política de Privacidade
-            </Link>
-            <Link href="/termos" className="hover:text-primary transition-colors">
-              Termos de Utilização
-            </Link>
-          </div>
+        <div className="border-t border-[#ECE5D5]/10 mt-12 pt-8">
+          <p className="text-small text-[#ECE5D5]/60 text-center">
+            © 2024 Wine Club. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>

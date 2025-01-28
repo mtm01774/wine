@@ -9,13 +9,23 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
-        <Hero />
-        <Plans />
-        <Shop />
-        <Testimonials />
+      <main className="smooth-scroll h-screen overflow-y-auto">
+        <div>
+          <Hero />
+        </div>
+        <div>
+          <Shop />
+        </div>
+        <div>
+          <Plans />
+        </div>
+        <div>
+          <Testimonials />
+        </div>
+        <div>
+          <Footer />
+        </div>
       </main>
-      <Footer />
     </>
   );
 }

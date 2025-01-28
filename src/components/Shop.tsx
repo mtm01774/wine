@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as Tooltip from '@radix-ui/react-tooltip';
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -109,18 +110,28 @@ export function Shop() {
 
   return (
     <Tooltip.Provider delayDuration={200}>
-      <section className="py-24 bg-[#010A00]">
+      <section className="py-24 bg-[#1A393E]">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#ECE5D5]">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-h1 font-bold mb-6 text-[#ECE5D5]"
+            >
               Vinhos em Destaque
-            </h2>
-            <p className="text-[#ECE5D5]/50 text-lg">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-large text-[#ECE5D5]/90 max-w-2xl mx-auto"
+            >
               Descubra a nossa seleção premium de vinhos portugueses.{" "}
-              <a href="/loja" className="text-[#979C06] hover:underline">
-                Ver loja
+              <a href="/loja" className="text-[#F7EC73] hover:underline">
+                Visitar loja
               </a>
-            </p>
+            </motion.p>
           </div>
 
           <div className="relative mb-8">
@@ -143,7 +154,7 @@ export function Shop() {
               >
                 {featuredWines.map((wine) => (
                   <SwiperSlide key={wine.name}>
-                    <div className="bg-[#011A01] rounded-2xl overflow-hidden shadow-lg min-h-[520px] h-full flex flex-col">
+                    <div className="bg-[#0D1C1F] rounded-2xl overflow-hidden min-h-[520px] h-full flex flex-col">
                       <div className="relative w-full aspect-square bg-[#ECE5D5] flex-shrink-0">
                         <Image
                           src={wine.image}
@@ -151,8 +162,11 @@ export function Shop() {
                           fill
                           className="object-contain"
                         />
-                        <div className="absolute top-2 right-2 w-9 h-9 rounded-full bg-[#979C06] flex items-center justify-center">
-                          <span className="text-[#010A00] font-bold text-sm">{wine.rating}</span>
+                        <div className="absolute top-2 right-2 h-7 px-3 rounded-full bg-[#4F0141]/70 flex items-center justify-center">
+                          <span className="text-[#ECE5D5] leading-none flex items-center justify-center mt-0.5">
+                            <span className="font-bold text-[14px]">{wine.rating}</span>
+                            <span className="text-[10px] ml-0.5">pts</span>
+                          </span>
                         </div>
                       </div>
                       <div className="p-6 md:p-8 space-y-3 flex-1 flex flex-col justify-between">
@@ -162,44 +176,44 @@ export function Shop() {
                               <Tooltip.Trigger className="w-full text-left">
                                 <h3 
                                   ref={(el) => setTitleRef(el, wine.name)}
-                                  className="font-bold text-lg text-[#ECE5D5] truncate"
+                                  className="text-h3 font-bold text-[#ECE5D5] truncate"
                                 >
                                   {wine.name}
                                 </h3>
                               </Tooltip.Trigger>
                               <Tooltip.Content
-                                className="bg-[#010A00] text-[#ECE5D5] px-4 py-2 rounded-lg text-sm z-50 shadow-lg"
+                                className="bg-[#1A393E] text-[#ECE5D5] px-4 py-2 rounded-lg text-small z-50 shadow-lg"
                                 sideOffset={5}
                               >
                                 {wine.name}
-                                <Tooltip.Arrow className="fill-[#010A00]" />
+                                <Tooltip.Arrow className="fill-[#1A393E]" />
                               </Tooltip.Content>
                             </Tooltip.Root>
                           ) : (
                             <h3 
                               ref={(el) => setTitleRef(el, wine.name)}
-                              className="font-bold text-lg text-[#ECE5D5] truncate"
+                              className="text-h3 font-bold text-[#ECE5D5] truncate"
                             >
                               {wine.name}
                             </h3>
                           )}
                           <div className="flex items-center gap-2 flex-wrap">
-                            <span className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-xs px-2 py-1 rounded-full">
+                            <span className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-small px-2 py-1 rounded-full">
                               {wine.type}
                             </span>
-                            <span className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-xs px-2 py-1 rounded-full">
+                            <span className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-small px-2 py-1 rounded-full">
                               {wine.year}
                             </span>
-                            <span className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-xs px-2 py-1 rounded-full">
+                            <span className="bg-[#ECE5D5]/10 text-[#ECE5D5] text-small px-2 py-1 rounded-full">
                               {wine.region}
                             </span>
                           </div>
                         </div>
                         <div className="flex items-center justify-between pt-2">
-                          <span className="text-[#ECE5D5] font-bold text-xl">€{wine.price}</span>
-                          <button className="bg-[#993270] text-[#ECE5D5] px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#993270]/90 transition-colors flex items-center gap-2">
+                          <span className="text-[#ECE5D5] font-bold text-large">€{wine.price}</span>
+                          <button className="btn-primary text-button flex items-center gap-1">
                             <ShoppingCart size={16} />
-                            Adicionar
+                            <span className="pt-0.5">Adicionar</span>
                           </button>
                         </div>
                       </div>
@@ -212,10 +226,10 @@ export function Shop() {
 
           <div className="mt-8 flex justify-center">
             <div className="flex items-center gap-3">
-              <Truck className="text-[#979C06]" size={20} />
+              <Truck className="text-[#F7EC73]" size={20} />
               <p className="text-[#ECE5D5]/70 text-sm">
                 <span className="font-bold">Entrega Express</span> - Apenas disponível para a cidade de Braga e Guimarães.{" "}
-                <a href="/como-funciona" className="text-[#979C06] hover:underline">
+                <a href="/como-funciona" className="text-[#F7EC73] hover:underline">
                   Como funciona
                 </a>
               </p>
