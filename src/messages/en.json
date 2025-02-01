@@ -1,0 +1,206 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "store": "Store",
+    "plans": "Plans",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "Index": {
+    "title": "Discover the Best of Wines",
+    "description": "Explore our exclusive selection of premium wines, carefully chosen for you.",
+    "cta": {
+      "plans": "View Plans",
+      "howItWorks": "How It Works"
+    },
+    "hero": {
+      "imageAlt": "Premium wine bottle"
+    }
+  },
+  "Products": {
+    "title": "Our Plans",
+    "description": "Choose the ideal plan for your wine journey",
+    "plans": {
+      "semestral": {
+        "title": "Semiannual",
+        "price": "€ 179",
+        "period": "/month",
+        "features": {
+          "bottles": "2 premium bottles per month",
+          "tastingNotes": "Tasting notes",
+          "newsletter": "Exclusive newsletter",
+          "discountClub": "Access to discount club",
+          "discount": "10% discount",
+          "welcome": "Welcome gift"
+        }
+      },
+      "mensal": {
+        "title": "Monthly",
+        "price": "€ 199",
+        "period": "/month",
+        "features": {
+          "bottles": "2 premium bottles per month",
+          "tastingNotes": "Tasting notes",
+          "newsletter": "Exclusive newsletter",
+          "discountClub": "Access to discount club"
+        }
+      },
+      "anual": {
+        "title": "Annual",
+        "price": "€ 159",
+        "period": "/month",
+        "features": {
+          "bottles": "2 premium bottles per month",
+          "tastingNotes": "Tasting notes",
+          "newsletter": "Exclusive newsletter",
+          "discountClub": "Access to discount club",
+          "discount": "20% discount",
+          "welcome": "Welcome gift",
+          "glass": "Exclusive club glass"
+        }
+      }
+    },
+    "subscribe": "Subscribe Now"
+  },
+  "Contact": {
+    "title": "Get in Touch",
+    "description": "Have a question or suggestion? We're here to help. Contact us and we'll get back to you as soon as possible.",
+    "email": {
+      "title": "Email",
+      "value": "contact@vinial.com"
+    },
+    "phone": {
+      "title": "Phone",
+      "value": "+351 123 456 789"
+    },
+    "address": {
+      "title": "Address",
+      "value": "Wine Street, 123 - Porto, Portugal"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "message": "Message",
+      "messagePlaceholder": "Enter your message",
+      "submit": "Send Message"
+    }
+  },
+  "Footer": {
+    "about": {
+      "title": "About",
+      "description": "We are passionate about wines and want to share this passion with you. Our carefully curated selection brings the best from vineyards around the world to your table."
+    },
+    "quickLinks": {
+      "title": "Links",
+      "store": "Store",
+      "plans": "Plans",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "contact@vinial.com",
+      "phone": "+351 123 456 789"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Get news and exclusive offers.",
+      "placeholder": "Your email",
+      "submit": "Submit"
+    },
+    "copyright": "© 2024 Vinial. All rights reserved."
+  },
+  "About": {
+    "title": "About",
+    "description": "Discover our story and passion for exceptional wines",
+    "hero": {
+      "imageAlt": "Our wine cellar"
+    },
+    "story": {
+      "title": "Our Story",
+      "content": "Founded over a decade ago, Vinial was born from a passion for exceptional wines and the desire to share this experience with wine lovers worldwide. Our journey began with a simple idea: to make the finest wines accessible to everyone, offering unique and personalized curation."
+    },
+    "stats": {
+      "years": "Years of Experience",
+      "clients": "Satisfied Clients",
+      "wines": "Selected Wines",
+      "regions": "Wine Regions"
+    },
+    "features": {
+      "selection": {
+        "title": "Premium Selection",
+        "description": "Wines carefully selected by our experts"
+      },
+      "quality": {
+        "title": "Quality Guarantee",
+        "description": "All wines are verified and approved"
+      },
+      "community": {
+        "title": "Community",
+        "description": "An active community of wine lovers"
+      },
+      "worldwide": {
+        "title": "Global Reach",
+        "description": "Partnerships with wineries worldwide"
+      }
+    }
+  },
+  "Store": {
+    "title": "Our Cellar",
+    "description": "Discover our exclusive selection of premium wines, carefully chosen for you.",
+    "backToStore": "Back to Store",
+    "searchPlaceholder": "Search wines...",
+    "filters": {
+      "type": {
+        "all": "All types",
+        "red": "Red",
+        "white": "White",
+        "rose": "Rosé"
+      },
+      "region": {
+        "all": "All Regions"
+      },
+      "price": {
+        "all": "All Prices",
+        "upTo20": "Up to €20",
+        "20to50": "€20 - €50",
+        "50to100": "€50 - €100",
+        "above100": "Above €100"
+      }
+    },
+    "wineDetails": {
+      "stock": "In stock",
+      "units": "units",
+      "description": "Description",
+      "price": "Price",
+      "addToCart": "Add to Cart",
+      "outOfStock": "Out of Stock"
+    }
+  },
+  "Cart": {
+    "title": "Your Cart",
+    "empty": {
+      "title": "Your cart is empty",
+      "description": "Add some products to your cart and come back here to complete your purchase."
+    },
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "checkout": "Checkout",
+      "continueShopping": "Continue Shopping"
+    },
+    "item": {
+      "quantity": "Quantity",
+      "remove": "Remove"
+    }
+  },
+  "metadata": {
+    "title": "Vinial - Wine Club",
+    "description": "Exceptional wines delivered to your door"
+  }
+} 

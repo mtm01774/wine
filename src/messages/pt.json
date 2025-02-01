@@ -1,0 +1,206 @@
+{
+  "Navigation": {
+    "home": "Início",
+    "store": "Loja",
+    "plans": "Planos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "login": "Entrar"
+  },
+  "Index": {
+    "title": "Descubra o Melhor dos Vinhos",
+    "description": "Explore nossa seleção exclusiva de vinhos premium, cuidadosamente escolhidos para você.",
+    "cta": {
+      "plans": "Ver Planos",
+      "howItWorks": "Como Funciona"
+    },
+    "hero": {
+      "imageAlt": "Garrafa de vinho premium"
+    }
+  },
+  "Products": {
+    "title": "Nossos Planos",
+    "description": "Escolha o plano ideal para sua jornada no mundo dos vinhos",
+    "plans": {
+      "semestral": {
+        "title": "Semestral",
+        "price": "€ 179",
+        "period": "/mês",
+        "features": {
+          "bottles": "2 garrafas premium por mês",
+          "tastingNotes": "Fichas de prova",
+          "newsletter": "Newsletter exclusiva",
+          "discountClub": "Acesso ao clube de descontos",
+          "discount": "10% de desconto",
+          "welcome": "Presente de boas-vindas"
+        }
+      },
+      "mensal": {
+        "title": "Mensal",
+        "price": "€ 199",
+        "period": "/mês",
+        "features": {
+          "bottles": "2 garrafas premium por mês",
+          "tastingNotes": "Fichas de prova",
+          "newsletter": "Newsletter exclusiva",
+          "discountClub": "Acesso ao clube de descontos"
+        }
+      },
+      "anual": {
+        "title": "Anual",
+        "price": "€ 159",
+        "period": "/mês",
+        "features": {
+          "bottles": "2 garrafas premium por mês",
+          "tastingNotes": "Fichas de prova",
+          "newsletter": "Newsletter exclusiva",
+          "discountClub": "Acesso ao clube de descontos",
+          "discount": "20% de desconto",
+          "welcome": "Presente de boas-vindas",
+          "glass": "Copo exclusivo do clube"
+        }
+      }
+    },
+    "subscribe": "Assinar Agora"
+  },
+  "Contact": {
+    "title": "Entre em Contato",
+    "description": "Tem alguma dúvida ou sugestão? Estamos aqui para ajudar. Entre em contato conosco e retornaremos o mais breve possível.",
+    "email": {
+      "title": "Email",
+      "value": "contato@vinial.com"
+    },
+    "phone": {
+      "title": "Telefone",
+      "value": "+351 123 456 789"
+    },
+    "address": {
+      "title": "Endereço",
+      "value": "Rua do Vinho, 123 - Porto, Portugal"
+    },
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Digite seu nome",
+      "email": "Email",
+      "emailPlaceholder": "Digite seu email",
+      "message": "Mensagem",
+      "messagePlaceholder": "Digite sua mensagem",
+      "submit": "Enviar Mensagem"
+    }
+  },
+  "Footer": {
+    "about": {
+      "title": "Sobre",
+      "description": "Somos apaixonados por vinhos e queremos compartilhar essa paixão com você. Nossa seleção cuidadosamente curada traz o melhor das vinícolas do mundo para sua mesa."
+    },
+    "quickLinks": {
+      "title": "Links",
+      "store": "Loja",
+      "plans": "Planos",
+      "about": "Sobre",
+      "contact": "Contato"
+    },
+    "contact": {
+      "title": "Contato",
+      "email": "contato@vinial.com",
+      "phone": "+351 123 456 789"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Receba notícias e ofertas exclusivas.",
+      "placeholder": "Seu email",
+      "submit": "Enviar"
+    },
+    "copyright": "© 2024 Vinial. Todos os direitos reservados."
+  },
+  "About": {
+    "title": "Sobre",
+    "description": "Conheça nossa história e paixão por vinhos excepcionais",
+    "hero": {
+      "imageAlt": "Nossa adega"
+    },
+    "story": {
+      "title": "Nossa História",
+      "content": "Fundada há mais de uma década, a Vinial nasceu da paixão por vinhos excepcionais e do desejo de compartilhar essa experiência com amantes de vinho em todo o mundo. Nossa jornada começou com uma simples ideia: tornar os melhores vinhos acessíveis a todos, oferecendo uma curadoria única e personalizada."
+    },
+    "stats": {
+      "years": "Anos de Experiência",
+      "clients": "Clientes Satisfeitos",
+      "wines": "Vinhos Selecionados",
+      "regions": "Regiões Vinícolas"
+    },
+    "features": {
+      "selection": {
+        "title": "Seleção Premium",
+        "description": "Vinhos cuidadosamente selecionados por nossos especialistas"
+      },
+      "quality": {
+        "title": "Garantia de Qualidade",
+        "description": "Todos os vinhos são verificados e aprovados"
+      },
+      "community": {
+        "title": "Comunidade",
+        "description": "Uma comunidade ativa de amantes de vinho"
+      },
+      "worldwide": {
+        "title": "Alcance Global",
+        "description": "Parcerias com vinícolas do mundo todo"
+      }
+    }
+  },
+  "Store": {
+    "title": "Nossa Adega",
+    "description": "Descubra nossa seleção exclusiva de vinhos premium, cuidadosamente escolhidos para você.",
+    "backToStore": "Voltar para a loja",
+    "searchPlaceholder": "Pesquisar vinhos...",
+    "filters": {
+      "type": {
+        "all": "Todos os tipos",
+        "red": "Tinto",
+        "white": "Branco",
+        "rose": "Rosé"
+      },
+      "region": {
+        "all": "Todas as Regiões"
+      },
+      "price": {
+        "all": "Todos os Preços",
+        "upTo20": "Até €20",
+        "20to50": "€20 - €50",
+        "50to100": "€50 - €100",
+        "above100": "Acima de €100"
+      }
+    },
+    "wineDetails": {
+      "stock": "Em estoque",
+      "units": "unidades",
+      "description": "Descrição",
+      "price": "Preço",
+      "addToCart": "Adicionar ao Carrinho",
+      "outOfStock": "Fora de Estoque"
+    }
+  },
+  "Cart": {
+    "title": "Seu Carrinho",
+    "empty": {
+      "title": "Seu carrinho está vazio",
+      "description": "Adicione alguns produtos ao seu carrinho e volte aqui para finalizar sua compra."
+    },
+    "summary": {
+      "title": "Resumo do Pedido",
+      "subtotal": "Subtotal",
+      "shipping": "Entrega",
+      "total": "Total",
+      "checkout": "Finalizar Compra",
+      "continueShopping": "Continuar Comprando"
+    },
+    "item": {
+      "quantity": "Quantidade",
+      "remove": "Remover"
+    }
+  },
+  "metadata": {
+    "title": "Vinial - Clube do Vinho",
+    "description": "Vinhos excepcionais entregues na sua porta"
+  }
+} 

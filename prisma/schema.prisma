@@ -18,30 +18,59 @@ model User {
 }
 
 model Wine {
-  id          String   @id @default(uuid())
-  name        String
-  type        String
-  region      String
-  price       Float
-  rating      Float
-  image       String
-  year        Int
-  description String?
+  id           String           @id @default(cuid())
+  name         String
+  type         String
+  region       String
+  price        Float
+  rating       Float
+  image        String?
+  year         Int
+  stock        Int             @default(0)
+  translations WineTranslation[]
   grapeVariety String?
-  body        String?
-  servingTemp String?
+  body         String?
+  servingTemp  String?
+  cartItems    CartItem[]
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+}
+
+model WineTranslation {
+  id          String   @id @default(uuid())
+  wineId      String
+  wine        Wine     @relation(fields: [wineId], references: [id], onDelete: Cascade)
+  locale      String
+  name        String
+  description String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@unique([wineId, locale])
 }
 
 model Plan {
   id          String   @id @default(uuid())
   name        String
   price       Float
-  description String
-  features    String
+  interval    String   @default("month")
+  features    String   // JSON array of features
+  translations PlanTranslation[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model PlanTranslation {
+  id          String   @id @default(uuid())
+  planId      String
+  plan        Plan     @relation(fields: [planId], references: [id], onDelete: Cascade)
+  locale      String
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([planId, locale])
 }
 
 model Contact {
@@ -51,6 +80,15 @@ model Contact {
   subject   String
   message   String
   status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  quantity  Int      @default(1)
+  wine      Wine     @relation(fields: [wineId], references: [id])
+  wineId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 } 

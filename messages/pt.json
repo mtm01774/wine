@@ -1,0 +1,160 @@
+{
+  "Index": {
+    "title": "Desfrute do vinho, nós cuidamos de tudo!",
+    "description": "Vinhos excepcionais, pouco conhecidos. Receba-os em sua casa.",
+    "cta": {
+      "plans": "Ver Planos",
+      "howItWorks": "Como Funciona"
+    },
+    "hero": {
+      "imageAlt": "Homem apreciando vinho"
+    }
+  },
+  "Navigation": {
+    "home": "Início",
+    "store": "Loja",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "login": "Entrar",
+    "dashboard": "Painel"
+  },
+  "Store": {
+    "title": "Loja",
+    "description": "Descubra nossa seleção exclusiva de vinhos premium, cuidadosamente escolhidos para você.",
+    "subtitle": "Vinhos em Destaque",
+    "searchPlaceholder": "Procurar vinhos...",
+    "filters": {
+      "type": {
+        "all": "Todos os Tipos",
+        "red": "Tinto",
+        "white": "Branco",
+        "rose": "Rosé"
+      },
+      "region": {
+        "all": "Todas as Regiões"
+      },
+      "price": {
+        "all": "Todos os Preços",
+        "upTo20": "Até €20",
+        "20to50": "€20 - €50",
+        "50to100": "€50 - €100",
+        "above100": "Acima de €100"
+      }
+    }
+  },
+  "Cart": {
+    "title": "Seu Carrinho",
+    "summary": {
+      "title": "Resumo do Pedido",
+      "subtotal": "Subtotal",
+      "shipping": "Entrega",
+      "total": "Total",
+      "checkout": "Finalizar Compra",
+      "continueShopping": "Continuar Comprando"
+    }
+  },
+  "Products": {
+    "title": "Nossos Planos",
+    "description": "Escolha o plano que melhor se adapta ao seu perfil e comece a receber vinhos exclusivos em sua casa.",
+    "subscribe": "Subscrever",
+    "plans": {
+      "mensal": {
+        "title": "Mensal",
+        "period": "/mês"
+      },
+      "semestral": {
+        "title": "Semestral",
+        "period": "/mês"
+      },
+      "anual": {
+        "title": "Anual",
+        "period": "/mês"
+      }
+    },
+    "filter": {
+      "all": "Todos",
+      "red": "Tinto",
+      "white": "Branco",
+      "rose": "Rosé",
+      "sparkling": "Espumante"
+    }
+  },
+  "Admin": {
+    "login": {
+      "title": "Painel Administrativo",
+      "description": "Acesse o painel administrativo para gerenciar o conteúdo do site",
+      "email": "Email",
+      "password": "Senha",
+      "submit": "Entrar",
+      "error": "Erro ao entrar",
+      "success": "Login realizado com sucesso"
+    },
+    "dashboard": {
+      "title": "Painel de Controle",
+      "welcome": "Bem-vindo, {name}",
+      "products": "Gerenciar Produtos",
+      "orders": "Pedidos",
+      "users": "Usuários",
+      "settings": "Configurações"
+    }
+  },
+  "About": {
+    "title": "Sobre",
+    "description": "Conheça nossa história e paixão por vinhos excepcionais",
+    "hero": {
+      "imageAlt": "Nossa adega"
+    },
+    "story": {
+      "title": "Nossa História",
+      "content": "Fundada há mais de uma década, a Vinial nasceu da paixão por vinhos excepcionais e do desejo de compartilhar essa experiência com amantes de vinho em todo o mundo. Nossa jornada começou com uma simples ideia: tornar os melhores vinhos acessíveis a todos, oferecendo uma curadoria única e personalizada."
+    },
+    "stats": {
+      "years": "Anos de Experiência",
+      "clients": "Clientes Satisfeitos",
+      "wines": "Vinhos Selecionados",
+      "regions": "Regiões Vinícolas"
+    },
+    "features": {
+      "selection": {
+        "title": "Seleção Premium",
+        "description": "Vinhos cuidadosamente selecionados por nossos especialistas"
+      },
+      "quality": {
+        "title": "Garantia de Qualidade",
+        "description": "Todos os vinhos são verificados e aprovados"
+      },
+      "community": {
+        "title": "Comunidade",
+        "description": "Uma comunidade ativa de amantes de vinho"
+      },
+      "worldwide": {
+        "title": "Alcance Global",
+        "description": "Parcerias com vinícolas do mundo todo"
+      }
+    }
+  },
+  "Footer": {
+    "about": {
+      "title": "Sobre",
+      "description": "Somos apaixonados por vinhos e queremos compartilhar essa paixão com você através de seleções exclusivas e experiências únicas."
+    },
+    "quickLinks": {
+      "title": "Links",
+      "store": "Loja",
+      "about": "Sobre",
+      "contact": "Contato"
+    },
+    "contact": {
+      "title": "Contato",
+      "email": "contato@vinial.com",
+      "phone": "+351 123 456 789"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Receba novidades e ofertas exclusivas.",
+      "placeholder": "Seu e-mail",
+      "submit": "Enviar"
+    },
+    "copyright": "© 2024 Vinial. Todos os direitos reservados."
+  }
+}

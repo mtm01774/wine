@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { Plans } from "@/components/Plans";
 import { Shop } from "@/components/Shop";
 import { Testimonials } from "@/components/Testimonials";
-import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,9 +20,6 @@ export default function Home() {
         </div>
         <div>
           <Testimonials />
-        </div>
-        <div>
-          <Footer />
         </div>
       </main>
     </>

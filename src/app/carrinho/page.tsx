@@ -110,7 +110,7 @@ export default function CarrinhoPage() {
                   Finalizar Compra
                 </button>
                 <Link
-                  href="/loja"
+                  href="/store"
                   className="block text-center text-primary text-sm mt-4 hover:underline"
                 >
                   Continuar Comprando

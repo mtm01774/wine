@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  viewport: 'width=device-width, initial-scale=1',
+  charSet: 'utf-8',
 };
 
 export default function RootLayout({
@@ -28,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`${epilogue.variable} ${redRose.variable} font-sans antialiased`}>
+    <html lang="pt" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${epilogue.variable} ${redRose.variable} font-sans antialiased bg-[#1A393E] text-[#ECE5D5] min-h-screen`}>
         {children}
       </body>
     </html>

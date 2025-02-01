@@ -1,8 +1,7 @@
-import { Header } from './Header';
-import { Hero } from './Hero';
-import { Plans } from './Plans';
-import { Shop } from './Shop';
-import { Testimonials } from './Testimonials';
-import { Footer } from './Footer';
-
-export { Header, Hero, Plans, Shop, Testimonials, Footer }; 
+export { HomePage } from './HomePage';
+export { Hero } from './Hero';
+export { Plans } from './Plans';
+export { Header } from './Header';
+export { Footer } from './Footer';
+export { WineCard } from './WineCard';
+export { LanguageSwitcher } from './LanguageSwitcher';

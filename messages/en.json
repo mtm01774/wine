@@ -1,0 +1,160 @@
+{
+  "Index": {
+    "title": "Enjoy the wine, we'll take care of everything!",
+    "description": "Exceptional, lesser-known wines. Delivered to your home.",
+    "cta": {
+      "plans": "View Plans",
+      "howItWorks": "How It Works"
+    },
+    "hero": {
+      "imageAlt": "Man enjoying wine"
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "store": "Store",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Sign In",
+    "dashboard": "Dashboard"
+  },
+  "Store": {
+    "title": "Store",
+    "description": "Discover our exclusive selection of premium wines, carefully chosen for you.",
+    "subtitle": "Featured Wines",
+    "searchPlaceholder": "Search wines...",
+    "filters": {
+      "type": {
+        "all": "All Types",
+        "red": "Red",
+        "white": "White",
+        "rose": "Rosé"
+      },
+      "region": {
+        "all": "All Regions"
+      },
+      "price": {
+        "all": "All Prices",
+        "upTo20": "Up to €20",
+        "20to50": "€20 - €50",
+        "50to100": "€50 - €100",
+        "above100": "Above €100"
+      }
+    }
+  },
+  "Cart": {
+    "title": "Your Cart",
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "checkout": "Checkout",
+      "continueShopping": "Continue Shopping"
+    }
+  },
+  "Products": {
+    "title": "Our Plans",
+    "description": "Choose the plan that best suits your profile and start receiving exclusive wines at home.",
+    "subscribe": "Subscribe",
+    "plans": {
+      "mensal": {
+        "title": "Monthly",
+        "period": "/month"
+      },
+      "semestral": {
+        "title": "Semi-annual",
+        "period": "/month"
+      },
+      "anual": {
+        "title": "Annual",
+        "period": "/month"
+      }
+    },
+    "filter": {
+      "all": "All",
+      "red": "Red",
+      "white": "White",
+      "rose": "Rosé",
+      "sparkling": "Sparkling"
+    }
+  },
+  "Admin": {
+    "login": {
+      "title": "Admin Panel",
+      "description": "Access the admin panel to manage website content",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "error": "Login error",
+      "success": "Login successful"
+    },
+    "dashboard": {
+      "title": "Control Panel",
+      "welcome": "Welcome, {name}",
+      "products": "Manage Products",
+      "orders": "Orders",
+      "users": "Users",
+      "settings": "Settings"
+    }
+  },
+  "About": {
+    "title": "About",
+    "description": "Discover our story and passion for exceptional wines",
+    "hero": {
+      "imageAlt": "Our wine cellar"
+    },
+    "story": {
+      "title": "Our Story",
+      "content": "Founded over a decade ago, Vinial was born from a passion for exceptional wines and the desire to share this experience with wine lovers worldwide. Our journey began with a simple idea: to make the finest wines accessible to everyone by offering unique and personalized curation."
+    },
+    "stats": {
+      "years": "Years of Experience",
+      "clients": "Happy Clients",
+      "wines": "Selected Wines",
+      "regions": "Wine Regions"
+    },
+    "features": {
+      "selection": {
+        "title": "Premium Selection",
+        "description": "Wines carefully selected by our experts"
+      },
+      "quality": {
+        "title": "Quality Guarantee",
+        "description": "All wines are verified and approved"
+      },
+      "community": {
+        "title": "Community",
+        "description": "An active community of wine lovers"
+      },
+      "worldwide": {
+        "title": "Global Reach",
+        "description": "Partnerships with wineries worldwide"
+      }
+    }
+  },
+  "Footer": {
+    "about": {
+      "title": "About",
+      "description": "We are passionate about wines and want to share this passion with you through exclusive selections and unique experiences."
+    },
+    "quickLinks": {
+      "title": "Links",
+      "store": "Store",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "contact@vinial.com",
+      "phone": "+351 123 456 789"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Receive news and exclusive offers.",
+      "placeholder": "Your email",
+      "submit": "Submit"
+    },
+    "copyright": "© 2024 Vinial. All rights reserved."
+  }
+}
