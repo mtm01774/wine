@@ -2,12 +2,27 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale } from './i18n.config';
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
+import { verifyAuth } from '@/lib/auth';
 
+// Create the next-intl middleware
 const intlMiddleware = createMiddleware({
   defaultLocale,
   locales,
   localePrefix: 'always'
 });
+
+const PUBLIC_PATHS = [
+  '/',
+  '/login',
+  '/register',
+  '/store',
+  '/about',
+  '/contact',
+  '/plans',
+  '/api/auth/login',
+  '/api/auth/register',
+];
 
 export default async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -16,9 +31,11 @@ export default async function middleware(request: NextRequest) {
   const response = await intlMiddleware(request);
   const locale = response.headers.get('x-next-intl-locale') || defaultLocale;
 
-  // If it's an API route, just proceed
+  // If it's an API route, add locale to the request headers and proceed
   if (pathname.includes('/api/')) {
-    return NextResponse.next();
+    const apiResponse = NextResponse.next();
+    apiResponse.headers.set('x-next-intl-locale', locale);
+    return apiResponse;
   }
 
   // If not an admin route, return the intl middleware response
@@ -90,7 +107,36 @@ export default async function middleware(request: NextRequest) {
     return redirectResponse;
   }
 
-  return response;
+  // Check if it's a public path
+  const isPublicPath = PUBLIC_PATHS.some(path => 
+    pathname.startsWith(`/${locale}${path}`) || 
+    pathname === path
+  );
+
+  if (isPublicPath) {
+    return response;
+  }
+
+  // Check authentication token
+  const token = request.cookies.get('auth-token');
+
+  if (!token) {
+    return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
+  }
+
+  try {
+    // Verify if token is valid
+    const isValid = await verifyAuth(token.value);
+    
+    if (!isValid) {
+      return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
+    }
+
+    return response;
+  } catch (error) {
+    console.error('Error verifying authentication:', error);
+    return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
+  }
 }
 
 export const config = {
@@ -99,6 +145,7 @@ export const config = {
     '/',
     '/(pt|en)/:path*',
     '/api/:path*',
-    '/admin/:path*'
+    '/admin/:path*',
+    '/((?!_next/static|_next/image|favicon.ico|images).*)',
   ]
 };

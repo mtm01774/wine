@@ -166,5 +166,32 @@
       "submit": "Submit"
     },
     "copyright": "© 2024 Vinial. All rights reserved."
+  },
+  "Auth": {
+    "title": "Welcome back",
+    "description": "Sign in to your account to continue",
+    "registerTitle": "Create account",
+    "registerDescription": "Create your account to start shopping",
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "submit": "Sign In",
+    "registerSubmit": "Create account",
+    "error": "Login error",
+    "registerError": "Error creating account",
+    "success": "Login successful",
+    "registerSuccess": "Account created successfully",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "register": "Sign Up",
+    "login": "Sign In",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "metadata": {
+    "title": "Vinial - Premium Wines",
+    "description": "Discover exceptional wines, carefully selected for you."
   }
 }

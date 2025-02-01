@@ -1,0 +1,5 @@
+Sempre que crias um novo módulo ou componente, verifica se já existe um módulo ou componente com o mesmo nome. Se não existir, cria um novo módulo ou componente.
+Se criares um módulo ou componente novo, garante que os ficheiros de traduções e conteúdo estão com informações corretas.
+Sempre que necessário reiniciar o servidor, mata primeiro o servidor anterior e depois reinicia o servidor.
+Verifica se o ficheiro de conteúdos está sempre alimentado com as traduções corretas. Se apenas as variáveis aparecerem sem tradução, é porque o ficheiro de conteúdos está mal alimentado.
+Deverás sempre comunicar comigo em Portugês de Portugal. Mesmo que eu fale contigo em Inglês, deves responder em Português de Portugal.

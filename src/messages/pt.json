@@ -7,6 +7,50 @@
     "contact": "Contato",
     "login": "Entrar"
   },
+  "Admin": {
+    "dashboard": "Painel",
+    "dashboard": {
+      "title": "Painel de Controlo",
+      "stats": {
+        "wines": "Total de Vinhos",
+        "plans": "Total de Planos",
+        "contacts": "Total de Contactos",
+        "users": "Total de Utilizadores"
+      },
+      "recentContacts": {
+        "title": "Contactos Recentes",
+        "noContacts": "Nenhum contacto recente",
+        "viewAll": "Ver Todos"
+      },
+      "recentOrders": {
+        "title": "Pedidos Recentes",
+        "noOrders": "Nenhum pedido recente",
+        "viewAll": "Ver Todos"
+      }
+    },
+    "login": {
+      "title": "Área Administrativa",
+      "description": "Entre com suas credenciais para acessar o painel administrativo",
+      "email": "E-mail",
+      "password": "Senha",
+      "submit": "Entrar",
+      "error": "Credenciais inválidas",
+      "success": "Login realizado com sucesso"
+    },
+    "wines": "Vinhos",
+    "plans": "Planos",
+    "users": "Utilizadores",
+    "contacts": "Contactos",
+    "viewStore": "Ver Loja",
+    "logout": "Sair",
+    "actions": {
+      "add": "Adicionar",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    }
+  },
   "Index": {
     "title": "Descubra o Melhor dos Vinhos",
     "description": "Explore nossa seleção exclusiva de vinhos premium, cuidadosamente escolhidos para você.",
@@ -202,5 +246,28 @@
   "metadata": {
     "title": "Vinial - Clube do Vinho",
     "description": "Vinhos excepcionais entregues na sua porta"
+  },
+  "Auth": {
+    "title": "Bem-vindo de volta",
+    "description": "Entre com sua conta para continuar",
+    "registerTitle": "Criar conta",
+    "registerDescription": "Crie sua conta para começar a comprar",
+    "name": "Nome",
+    "namePlaceholder": "Seu nome completo",
+    "email": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "password": "Senha",
+    "confirmPassword": "Confirmar senha",
+    "submit": "Entrar",
+    "registerSubmit": "Criar conta",
+    "error": "Erro ao fazer login",
+    "registerError": "Erro ao criar conta",
+    "success": "Login realizado com sucesso",
+    "registerSuccess": "Conta criada com sucesso",
+    "noAccount": "Ainda não tem uma conta?",
+    "haveAccount": "Já tem uma conta?",
+    "register": "Cadastre-se",
+    "login": "Entrar",
+    "passwordMismatch": "As senhas não coincidem"
   }
 } 

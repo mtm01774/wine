@@ -1,64 +1,70 @@
 import jwt from 'jsonwebtoken';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from './prisma';
+import bcrypt from 'bcryptjs';
 
-const prisma = new PrismaClient();
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
-export async function verifyAuth(token: string) {
+export async function verifyAuth(token: string): Promise<boolean> {
   try {
-    console.log('Verificando token JWT...');
-    const secret = process.env.JWT_SECRET;
-    if (!secret) {
-      console.error('JWT_SECRET não está definido!');
-      throw new Error('Configuração de JWT ausente');
-    }
+    // Verifica se o token é válido
+    const decoded = jwt.verify(token, JWT_SECRET) as { userId: string };
 
-    console.log('Decodificando token...');
-    const decoded = jwt.verify(token, secret) as {
-      userId: string;
-      email: string;
-    };
-    console.log('Token decodificado:', { userId: decoded.userId, email: decoded.email });
-
-    console.log('Buscando usuário no banco...');
+    // Verifica se o usuário existe
     const user = await prisma.user.findUnique({
-      where: { id: decoded.userId },
+      where: { id: decoded.userId }
     });
 
-    if (!user) {
-      console.log('Usuário não encontrado no banco');
-      throw new Error('Usuário não encontrado');
-    }
-
-    console.log('Usuário encontrado:', { id: user.id, email: user.email });
-    return user;
+    return !!user;
   } catch (error) {
-    if (error instanceof jwt.JsonWebTokenError) {
-      console.error('Erro na verificação do JWT:', error.message);
-      throw new Error(`Token JWT inválido: ${error.message}`);
-    }
-    console.error('Erro na autenticação:', error);
-    throw error;
-  } finally {
-    await prisma.$disconnect();
+    console.error('Erro ao verificar token:', error);
+    return false;
   }
 }
 
 export async function createInitialUser() {
-  const existingUser = await prisma.user.findUnique({
-    where: { email: 'luidanielcunha@gmail.com' },
-  });
+  try {
+    console.log('\n=== CREATING INITIAL USER ===');
+    
+    // Primeiro, vamos deletar o usuário existente para garantir um estado limpo
+    console.log('Deleting existing user if any...');
+    await prisma.user.deleteMany({
+      where: { email: 'luisdanielcunha@gmail.com' }
+    });
 
-  if (!existingUser) {
-    const bcrypt = require('bcryptjs');
-    const hashedPassword = await bcrypt.hash('Daniel91', 10);
-
-    await prisma.user.create({
+    // Criar a senha hash
+    console.log('Creating password hash...');
+    const password = 'admin123';
+    const hashedPassword = await bcrypt.hash(password, 10);
+    console.log('Password hash created successfully');
+    
+    // Criar o usuário
+    console.log('Creating new user...');
+    const user = await prisma.user.create({
       data: {
-        email: 'luidanielcunha@gmail.com',
+        email: 'luisdanielcunha@gmail.com',
         password: hashedPassword,
         name: 'Luis Daniel',
         role: 'ADMIN',
       },
     });
+    
+    console.log('Initial admin user created successfully:', {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      passwordHash: hashedPassword
+    });
+
+    // Verificar se a senha funciona
+    console.log('Testing password verification...');
+    const isPasswordValid = await bcrypt.compare(password, hashedPassword);
+    console.log('Password verification test:', isPasswordValid ? '✅ Success' : '❌ Failed');
+
+    console.log('=== INITIAL USER CREATION COMPLETE ===\n');
+    return user;
+  } catch (error) {
+    console.error('Error creating initial user:', error);
+    throw error;
   }
 } 

@@ -32,6 +32,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     { href: `/${locale}/admin/dashboard`, label: 'Dashboard', icon: LayoutDashboard },
     { href: `/${locale}/admin/wines`, label: 'Wines', icon: Wine },
     { href: `/${locale}/admin/plans`, label: 'Plans', icon: Package },
+    { href: `/${locale}/admin/users`, label: 'Users', icon: Users },
     { href: `/${locale}/admin/contacts`, label: 'Contacts', icon: MessageSquare },
   ];
 

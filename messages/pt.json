@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Vinial - Vinhos Premium",
+    "description": "Descubra vinhos excepcionais, cuidadosamente selecionados para você."
+  },
   "Index": {
     "title": "Desfrute do vinho, nós cuidamos de tudo!",
     "description": "Vinhos excepcionais, pouco conhecidos. Receba-os em sua casa.",
@@ -167,5 +171,28 @@
       "submit": "Enviar"
     },
     "copyright": "© 2024 Vinial. Todos os direitos reservados."
+  },
+  "Auth": {
+    "title": "Bem-vindo de volta",
+    "description": "Entre com sua conta para continuar",
+    "registerTitle": "Criar conta",
+    "registerDescription": "Crie sua conta para começar a comprar",
+    "name": "Nome",
+    "namePlaceholder": "Seu nome completo",
+    "email": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "password": "Senha",
+    "confirmPassword": "Confirmar senha",
+    "submit": "Entrar",
+    "registerSubmit": "Criar conta",
+    "error": "Erro ao fazer login",
+    "registerError": "Erro ao criar conta",
+    "success": "Login realizado com sucesso",
+    "registerSuccess": "Conta criada com sucesso",
+    "noAccount": "Ainda não tem uma conta?",
+    "haveAccount": "Já tem uma conta?",
+    "register": "Cadastre-se",
+    "login": "Entrar",
+    "passwordMismatch": "As senhas não coincidem"
   }
 }

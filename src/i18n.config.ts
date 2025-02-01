@@ -11,12 +11,24 @@ export const pathnames = {
   '/store': '/store',
   '/contact': '/contact',
   '/cart': '/cart',
-  '/login': '/login'
+  '/login': '/login',
+  '/api/auth/login': '/api/auth/login'
 } satisfies Pathnames<typeof locales>;
 
-export default {
+// Configuração do next-intl
+export const i18nConfig = {
   defaultLocale,
   locales,
   localePrefix: 'always',
-  pathnames
+  pathnames,
+  // Adiciona suporte a rotas da API
+  routes: {
+    api: {
+      auth: {
+        login: '/api/auth/login'
+      }
+    }
+  }
 } as const;
+
+export default i18nConfig;

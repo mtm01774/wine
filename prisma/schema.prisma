@@ -32,6 +32,7 @@ model Wine {
   body         String?
   servingTemp  String?
   cartItems    CartItem[]
+  orderItems   OrderItem[]
   createdAt    DateTime        @default(now())
   updatedAt    DateTime        @updatedAt
 }
@@ -91,4 +92,35 @@ model CartItem {
   wineId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Order {
+  id         String   @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id])
+  status     String
+  total      Float
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  items      OrderItem[]
+}
+
+model OrderItem {
+  id       String @id @default(cuid())
+  orderId  String
+  order    Order  @relation(fields: [orderId], references: [id])
+  wineId   String
+  wine     Wine   @relation(fields: [wineId], references: [id])
+  quantity Int
+  price    Float
 } 

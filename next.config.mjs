@@ -1,6 +1,4 @@
 import createNextIntlPlugin from 'next-intl/plugin';
-import { fileURLToPath } from 'url';
-import path from 'path';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
@@ -14,4 +12,4 @@ const nextConfig = {
   }
 };
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig); 

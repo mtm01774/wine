@@ -7,6 +7,50 @@
     "contact": "Contact",
     "login": "Login"
   },
+  "Admin": {
+    "dashboard": "Dashboard",
+    "dashboard": {
+      "title": "Control Panel",
+      "stats": {
+        "wines": "Total Wines",
+        "plans": "Total Plans",
+        "contacts": "Total Contacts",
+        "users": "Total Users"
+      },
+      "recentContacts": {
+        "title": "Recent Contacts",
+        "noContacts": "No recent contacts",
+        "viewAll": "View All"
+      },
+      "recentOrders": {
+        "title": "Recent Orders",
+        "noOrders": "No recent orders",
+        "viewAll": "View All"
+      }
+    },
+    "login": {
+      "title": "Admin Area",
+      "description": "Enter your credentials to access the admin panel",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "error": "Invalid credentials",
+      "success": "Login successful"
+    },
+    "wines": "Wines",
+    "plans": "Plans",
+    "users": "Users",
+    "contacts": "Contacts",
+    "viewStore": "View Store",
+    "logout": "Logout",
+    "actions": {
+      "add": "Add",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
   "Index": {
     "title": "Discover the Best of Wines",
     "description": "Explore our exclusive selection of premium wines, carefully chosen for you.",

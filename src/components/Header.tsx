@@ -70,7 +70,10 @@ export function Header() {
                   EN
                 </Link>
               </div>
-              <Link href="/login" className="text-[#ECE5D5] hover:text-[#F7EC73] transition-colors duration-200 text-[0.75rem] flex items-center gap-2 group">
+              <Link 
+                href="/login" 
+                className="text-[#ECE5D5] hover:text-[#F7EC73] transition-colors duration-200 text-[0.75rem] flex items-center gap-2 group"
+              >
                 <LogIn size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                 <span>{t('login')}</span>
               </Link>

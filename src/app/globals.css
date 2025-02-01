@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '../styles/typography.css';
+@import '@/styles/typography.css';
 
 :root {
   --primary: #F7EC73;
@@ -10,14 +10,11 @@
   --secondary: #F5E6E8;
   --text-primary: #ECE5D5;
   --text-secondary: #E0E0E0;
-  --background: #222222;
+  --background: 196 52% 17%;
+  --foreground: 37 82% 71%;
 }
 
 @layer base {
-  body {
-    @apply text-[var(--text-primary)] bg-background;
-  }
-
   h1, h2, h3, h4 {
     @apply font-display;
   }
@@ -25,19 +22,19 @@
 
 @layer components {
   .container-custom {
-    @apply container mx-auto px-4;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-primary/90 text-[#1A393E] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
+    @apply bg-[#F7EC73] hover:bg-[#F7EC73]/90 text-[#1A393E] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-primary hover:bg-primary text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
+    @apply bg-transparent border-2 border-[#F7EC73] hover:bg-[#F7EC73] text-[#ECE5D5] font-semibold py-2 px-6 rounded-full transition-colors duration-200;
   }
 
   .nav-link {
-    @apply text-[var(--text-secondary)] hover:text-primary transition-colors duration-200;
+    @apply text-[#E0E0E0] hover:text-[#F7EC73] transition-colors duration-200;
   }
 }
 
@@ -83,10 +80,6 @@
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
   overflow-x: hidden;
 }
 
