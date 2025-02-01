@@ -5,11 +5,13 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Wine, LogIn, ShoppingCart } from "lucide-react";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { useSelectedLayoutSegments } from 'next/navigation';
+import { useCart } from '@/contexts/CartContext';
 
 export function Header() {
   const t = useTranslations('Navigation');
   const locale = useLocale();
   const segments = useSelectedLayoutSegments();
+  const { totalItems } = useCart();
   
   // Remove o locale e o grupo (store) do path e junta os segmentos restantes
   const path = '/' + segments.filter(s => s !== '(store)').join('/');
@@ -75,8 +77,8 @@ export function Header() {
               <div className="relative flex items-center">
                 <Link href="/cart" className="text-[#ECE5D5] hover:text-[#F7EC73] transition-colors duration-200 flex items-center group">
                   <ShoppingCart size={18} className="transition-transform duration-300 group-hover:rotate-12" />
-                  <span className="ml-1 bg-[#F7EC73] text-[#1A393E] text-[10px] min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-medium pt-0.5">
-                    0
+                  <span className={`ml-1 ${totalItems > 0 ? 'bg-[#ECE5D5] text-[#1A393E]' : 'bg-[#F7EC73] text-[#1A393E]'} text-[10px] min-w-[16px] h-[16px] rounded-full flex items-center justify-center font-medium pt-0.5`}>
+                    {totalItems}
                   </span>
                 </Link>
               </div>

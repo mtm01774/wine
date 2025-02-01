@@ -23,6 +23,7 @@
     "description": "Descubra nossa seleção exclusiva de vinhos premium, cuidadosamente escolhidos para você.",
     "subtitle": "Vinhos em Destaque",
     "searchPlaceholder": "Procurar vinhos...",
+    "backToStore": "Voltar à Loja",
     "filters": {
       "type": {
         "all": "Todos os Tipos",
@@ -40,6 +41,16 @@
         "50to100": "€50 - €100",
         "above100": "Acima de €100"
       }
+    },
+    "wineDetails": {
+      "stock": "Estoque",
+      "units": "unidades",
+      "description": "Descrição",
+      "price": "Preço",
+      "addToCart": "Adicionar ao Carrinho",
+      "adding": "Adicionando...",
+      "outOfStock": "Fora de Estoque",
+      "backToStore": "Voltar à Loja"
     }
   },
   "Cart": {

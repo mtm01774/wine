@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
+import { prisma } from '@/lib/prisma';
 
 export async function GET(
   request: Request,
   { params }: { params: { locale: string } }
 ) {
   try {
+    console.log('Fetching cart items...');
+    
     // Buscar os itens do carrinho com os vinhos relacionados
     const cartItems = await prisma.cartItem.findMany({
       include: {
@@ -17,6 +19,7 @@ export async function GET(
       }
     });
 
+    console.log('Cart items fetched:', cartItems);
     return NextResponse.json({ items: cartItems });
   } catch (error) {
     console.error('Detailed error:', error);
@@ -27,7 +30,8 @@ export async function GET(
         { 
           error: 'Failed to load cart items',
           details: error.message,
-          name: error.name
+          name: error.name,
+          stack: error.stack
         },
         { status: 500 }
       );

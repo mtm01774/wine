@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { Link } from '@/navigation';
 import { ShoppingCart } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
+import { useState } from 'react';
 
 interface WineCardProps {
   wine: {
@@ -15,6 +17,19 @@ interface WineCardProps {
 }
 
 export function WineCard({ wine }: WineCardProps) {
+  const { addToCart } = useCart();
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddToCart = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      setIsAdding(true);
+      await addToCart(wine.id);
+    } finally {
+      setIsAdding(false);
+    }
+  };
+
   return (
     <div className="bg-[#0D1C1F] rounded-lg overflow-hidden group">
       <Link href={`/store/${wine.id}`} className="block">
@@ -32,13 +47,15 @@ export function WineCard({ wine }: WineCardProps) {
           <div className="flex items-center justify-between">
             <span className="text-[#F7EC73] font-medium">€{wine.price.toFixed(2)}</span>
             <button 
-              onClick={(e) => {
-                e.preventDefault();
-                // Adicionar ao carrinho
-              }}
-              className="w-10 h-10 rounded-lg bg-[#F7EC73] text-[#1A393E] flex items-center justify-center hover:bg-[#F7EC73]/90 transition-colors"
+              onClick={handleAddToCart}
+              disabled={isAdding}
+              className="w-10 h-10 rounded-lg bg-[#F7EC73] text-[#1A393E] flex items-center justify-center hover:bg-[#F7EC73]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <ShoppingCart size={18} />
+              {isAdding ? (
+                <div className="w-4 h-4 border-2 border-[#1A393E] border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <ShoppingCart size={18} />
+              )}
             </button>
           </div>
         </div>

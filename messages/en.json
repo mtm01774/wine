@@ -40,6 +40,16 @@
         "50to100": "€50 - €100",
         "above100": "Above €100"
       }
+    },
+    "wineDetails": {
+      "stock": "Stock",
+      "units": "units",
+      "description": "Description",
+      "price": "Price",
+      "addToCart": "Add to Cart",
+      "adding": "Adding...",
+      "outOfStock": "Out of Stock",
+      "backToStore": "Back to Store"
     }
   },
   "Cart": {

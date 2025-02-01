@@ -5,96 +5,18 @@ import Image from "next/image";
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
-
-interface CartItem {
-  id: string;
-  quantity: number;
-  wine: {
-    id: string;
-    translations: {
-      locale: string;
-      name: string;
-      description: string;
-    }[];
-    region: string;
-    price: number;
-    image: string;
-  };
-}
+import { useCart } from '@/contexts/CartContext';
 
 export default function CartPage() {
   const t = useTranslations('Cart');
   const params = useParams();
   const locale = params.locale as string;
-
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    loadCartItems();
-  }, [locale]);
-
-  async function loadCartItems() {
-    try {
-      const response = await fetch(`/api/${locale}/cart`);
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.details || 'Failed to load cart items');
-      }
-      
-      const data = await response.json();
-      setCartItems(data.items);
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
-      setError(`Error loading cart items: ${errorMessage}`);
-      console.error('Error loading cart items:', err);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  const updateQuantity = async (itemId: string, newQuantity: number) => {
-    if (newQuantity < 1) return;
-    
-    try {
-      const response = await fetch(`/api/${locale}/cart/${itemId}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ quantity: newQuantity }),
-      });
-
-      if (!response.ok) throw new Error('Failed to update quantity');
-      
-      setCartItems(prev => 
-        prev.map(item => 
-          item.id === itemId ? { ...item, quantity: newQuantity } : item
-        )
-      );
-    } catch (err) {
-      console.error('Error updating quantity:', err);
-    }
-  };
-
-  const removeItem = async (itemId: string) => {
-    try {
-      const response = await fetch(`/api/${locale}/cart/${itemId}`, {
-        method: 'DELETE',
-      });
-
-      if (!response.ok) throw new Error('Failed to remove item');
-      
-      setCartItems(prev => prev.filter(item => item.id !== itemId));
-    } catch (err) {
-      console.error('Error removing item:', err);
-    }
-  };
+  const { items: cartItems, loading, error, updateQuantity, removeFromCart } = useCart();
 
   const calculateSubtotal = () => {
-    return cartItems.reduce((total, item) => total + (item.wine.price * item.quantity), 0);
+    return cartItems.reduce((total, item) => {
+      return total + (item.wine.price * item.quantity);
+    }, 0);
   };
 
   const shippingCost = 5.00;
@@ -105,7 +27,7 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-[#1A393E] pt-24">
         <div className="container-custom">
-          <div className="flex items-center justify-center min-h-[400px]">
+          <div className="flex justify-center items-center min-h-[400px]">
             <div className="w-8 h-8 border-4 border-[#F7EC73] border-t-transparent rounded-full animate-spin"></div>
           </div>
         </div>
@@ -178,24 +100,24 @@ export default function CartPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                           <button 
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="w-8 h-8 rounded-full border border-[#ECE5D5]/20 flex items-center justify-center hover:border-[#F7EC73] transition-colors"
+                            onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                            className="w-8 h-8 rounded-full border border-[#ECE5D5]/20 flex items-center justify-center hover:bg-[#ECE5D5]/10"
                           >
-                            <Minus size={16} className="text-[#ECE5D5]/60" />
+                            <Minus size={16} className="text-[#ECE5D5]" />
                           </button>
                           <span className="text-[#ECE5D5]">{item.quantity}</span>
                           <button 
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="w-8 h-8 rounded-full border border-[#ECE5D5]/20 flex items-center justify-center hover:border-[#F7EC73] transition-colors"
+                            className="w-8 h-8 rounded-full border border-[#ECE5D5]/20 flex items-center justify-center hover:bg-[#ECE5D5]/10"
                           >
-                            <Plus size={16} className="text-[#ECE5D5]/60" />
+                            <Plus size={16} className="text-[#ECE5D5]" />
                           </button>
                         </div>
                         <div className="flex items-center gap-4">
                           <span className="text-[#F7EC73] font-medium">€{(item.wine.price * item.quantity).toFixed(2)}</span>
                           <button 
-                            onClick={() => removeItem(item.id)}
-                            className="text-red-400 hover:text-red-300 transition-colors"
+                            onClick={() => removeFromCart(item.id)}
+                            className="text-red-500 hover:text-red-400"
                           >
                             <Trash2 size={18} />
                           </button>

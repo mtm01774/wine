@@ -5,6 +5,8 @@ import { Star, Package, ArrowLeft, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/navigation';
 import { WineType } from '@/types/wine';
+import { useCart } from '@/contexts/CartContext';
+import { useState } from 'react';
 
 interface WineDetailsProps {
   wine: WineType;
@@ -13,7 +15,18 @@ interface WineDetailsProps {
 
 export function WineDetails({ wine, locale }: WineDetailsProps) {
   const t = useTranslations('Store');
+  const { addToCart } = useCart();
+  const [isAdding, setIsAdding] = useState(false);
   const translation = wine.translations.find(t => t.locale === locale) || wine.translations[0];
+
+  const handleAddToCart = async () => {
+    try {
+      setIsAdding(true);
+      await addToCart(wine.id);
+    } finally {
+      setIsAdding(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#1A393E] pt-24">
@@ -24,7 +37,9 @@ export function WineDetails({ wine, locale }: WineDetailsProps) {
           className="inline-flex items-center gap-2 text-[#ECE5D5] hover:text-[#F7EC73] transition-colors duration-200 mb-8"
         >
           <ArrowLeft size={20} />
-          <span>{t('backToStore')}</span>
+          <span>
+            {locale === 'pt' ? 'Voltar à Loja' : 'Back to Store'}
+          </span>
         </Link>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -82,11 +97,21 @@ export function WineDetails({ wine, locale }: WineDetailsProps) {
               </div>
               <button 
                 className="bg-[#F7EC73] text-[#1A393E] px-8 py-4 rounded-lg flex items-center gap-3 hover:bg-[#F7EC73]/90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={wine.stock === 0}
+                disabled={wine.stock === 0 || isAdding}
+                onClick={handleAddToCart}
               >
-                <ShoppingCart size={20} />
+                {isAdding ? (
+                  <div className="w-5 h-5 border-2 border-[#1A393E] border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <ShoppingCart size={20} />
+                )}
                 <span className="font-medium">
-                  {wine.stock > 0 ? t('wineDetails.addToCart') : t('wineDetails.outOfStock')}
+                  {wine.stock === 0 
+                    ? t('wineDetails.outOfStock')
+                    : isAdding 
+                      ? "..." 
+                      : t('wineDetails.addToCart')
+                  }
                 </span>
               </button>
             </div>
